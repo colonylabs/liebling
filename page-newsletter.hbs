@@ -5,7 +5,7 @@ This template is used for the subscription page.
 {{!-- This block loads specific styles for the newsletter page --}}
 {{#contentFor "styles"}}
   <link rel="preload" href="{{asset "css/newsletter.css"}}" as="style" />
-
+  <link rel="preload" href="{{asset "js/subscribe.js"}}" as="script" />
   <link rel="stylesheet" type="text/css" href="{{asset "css/newsletter.css"}}" media="screen" />
 {{/contentFor}}
 
@@ -35,3 +35,8 @@ into the {body} of the default.hbs template --}}
     </section>
   </div>
 </main>
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+  <script defer src="{{asset "js/subscribe.js"}}"></script>
+{{/contentFor}}
